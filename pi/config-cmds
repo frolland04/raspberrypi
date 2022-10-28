@@ -1,12 +1,18 @@
-sudo apt-get update
-sudo apt-get full-upgrade
+sudo passwd pi
+cd /
+sudo tar zcvf boot.0.tgz /boot
+sudo tar zcvf etc.0.tgz /etc
+sudo apt-get --assume-yes update
+sudo apt-get --assume-yes upgrade
+sudo apt-get --assume-yes dist-upgrade
+sudo apt-get --assume-yes full-upgrade
 sudo raspi-config
-sudo apt-get clean
-sudo apt-get autoclean
-sudo apt-get autoremove
+sudo apt-get --assume-yes clean
+sudo apt-get --assume-yes autoclean
+sudo apt-get --assume-yes autoremove
 sudo systemctl disable hciuart
 sudo systemctl disable dphys-swapfile.service
 sudo dphys-swapfile swapoff
 sudo dphys-swapfile uninstall
-sudo systemctl disable fake-hwclock
-sudo systemctl disable hciuart
+touch $HOME/.hushlogin
+sudo rm -f /etc/profile.d/wifi-check.sh
