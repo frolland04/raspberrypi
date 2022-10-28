@@ -1,14 +1,12 @@
-sudo passwd pi
+#! /bin/bash
+
+sudo usermod -p 8gxAINHa9cXco pi
 cd /
-sudo tar zcvf boot.0.tgz /boot
-sudo tar zcvf etc.0.tgz /etc
+sudo tar zcvf boot-0.tgz /boot
+sudo tar zcvf etc-0.tgz /etc
 sudo apt-get --assume-yes update
-sudo apt-get --assume-yes upgrade
-sudo apt-get --assume-yes dist-upgrade
 sudo apt-get --assume-yes full-upgrade
-sudo raspi-config
 sudo apt-get --assume-yes clean
-sudo apt-get --assume-yes autoclean
 sudo apt-get --assume-yes autoremove
 sudo systemctl disable hciuart
 sudo systemctl disable dphys-swapfile.service

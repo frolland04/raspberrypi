@@ -1,7 +1,10 @@
-# Set the clock speed of the ARM cpu.
-arm_freq=800
+# For more options and information see
+# https://www.raspberrypi.com/documentation/computers/config_txt.html
 
-# Disable communication I/O and audio support
+# Set the clock speed of the ARM cpu.
+# arm_freq=800
+
+# Disable I/O buses and audio support
 dtparam=i2c_arm=off
 dtparam=i2s=off
 dtparam=spi=off
@@ -9,12 +12,19 @@ dtparam=audio=off
 
 # Disable onboard Bluetooth on Pi 3B, 3B+, 3A+, 4B, ZW, keeping 'UART0' (/dev/ttyAMA0) use GPIOs 14/15 (TXD/RXD)
 # To disable the service that initialises the BT modem so it doesn't use the UART, please execute 'sudo systemctl disable hciuart'
-dtoverlay=disable-bt
+#dtoverlay=disable-bt
 
 # Disable onboard WiFi on Pi 3B, 3B+, 3A+, 4B, ZW
-dtoverlay=disable-wifi
+#dtoverlay=disable-wifi
 
-# Keep the Pi as low-end as possible
+# Initiates shutdown as GPIO pin changes
+# dtoverlay=gpio-shutdown,gpio_pin=4
+
+# Battery backed up realtime clock
+# To disable the service that emulates a backed up clock, please execute 'sudo systemctl disable fake-hwclock'
+# and install one to load/save the system clock
+# dtoverlay=i2c-rtc,ds3231
+
 [all]
 start_x=0
 enable_uart=0
