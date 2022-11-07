@@ -2,8 +2,8 @@
 
 sudo usermod -p 8gxAINHa9cXco pi
 cd /
-sudo tar zcvf boot-0.tgz /boot
-sudo tar zcvf etc-0.tgz /etc
+sudo tar zcvf boot.tgz.0 /boot
+sudo tar zcvf etc.tgz.0 /etc
 sudo apt-get --assume-yes update
 sudo apt-get --assume-yes full-upgrade
 sudo apt-get --assume-yes clean
