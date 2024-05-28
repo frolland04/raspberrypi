@@ -14,5 +14,8 @@ sudo systemctl disable hciuart
 sudo systemctl disable dphys-swapfile.service
 sudo dphys-swapfile swapoff
 sudo dphys-swapfile uninstall
+sudo systemctl disable ModemManager.service
+sudo systemctl disable wpa_supplicant.service
+sudo systemctl disable rsyslog.service
 touch $HOME/.hushlogin
 sudo rm -f /etc/profile.d/wifi-check.sh

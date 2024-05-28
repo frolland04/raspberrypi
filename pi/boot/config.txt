@@ -29,3 +29,4 @@ dtparam=audio=off
 start_x=0
 enable_uart=0
 gpu_mem=16
+
